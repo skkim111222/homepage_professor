@@ -96,11 +96,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   -webkit-backdrop-filter: saturate(140%) blur(10px);
   box-shadow: 0 1px 0 var(--night-line);
 }
-.header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-
-.brand { display: flex; flex-direction: column; text-decoration: none; line-height: 1.15; }
-.brand-name { font-weight: 600; font-size: 1.02rem; letter-spacing: -0.01em; }
-.brand-sub { font-size: .74rem; color: var(--on-night-3); letter-spacing: .02em; }
+.header-inner { height: 100%; display: flex; align-items: center; justify-content: flex-end; gap: 24px; }
 
 .site-nav { display: flex; gap: 4px; }
 .site-nav a {
@@ -126,7 +122,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .site-nav {
     position: absolute; top: var(--header-h); left: 0; right: 0;
     flex-direction: column; gap: 0; padding: 8px var(--gutter) 16px;
-    background: rgba(15, 16, 20, 0.97);
+    background: var(--night);
     box-shadow: 0 1px 0 var(--night-line), 0 16px 32px rgba(0, 0, 0, .35);
     display: none;
   }
