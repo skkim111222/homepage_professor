@@ -248,13 +248,14 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   background: rgba(255, 255, 255, .055); border: 1px solid var(--night-line);
   backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
 }
+/* number and title share one size and sit on the same baseline */
 .area-num {
-  grid-row: span 2;
+  align-self: baseline;
   display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 8px;
-  background: rgba(255, 255, 255, .14); font-weight: 600; font-size: 1.05rem;
+  background: rgba(255, 255, 255, .14); font-weight: 600; font-size: 1.16rem; line-height: 1;
 }
-.area h3 { margin: 0 0 10px; padding-top: 6px; font-size: 1.16rem; } /* first line centred on the number */
-.area p { color: var(--on-night-2); font-size: .95rem; }
+.area h3 { grid-column: 2; align-self: baseline; margin: 0 0 10px; font-size: 1.16rem; }
+.area p { grid-column: 2; color: var(--on-night-2); font-size: .95rem; }
 @media (max-width: 960px) { .areas { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .areas { grid-template-columns: 1fr; } }
 
