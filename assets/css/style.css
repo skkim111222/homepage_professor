@@ -261,7 +261,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .projects li {
   display: flex; flex-direction: column; gap: 4px;
   padding: 14px 0 14px 20px; position: relative;
-  border-bottom: 1px solid var(--night-line);
 }
 .projects li::before {
   content: ""; position: absolute; left: 2px; top: 23px;
@@ -415,7 +414,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .contact-card strong { color: var(--on-night); font-weight: 600; }
 .contact-card a { color: var(--on-night); text-decoration-color: rgba(255, 255, 255, .4); text-underline-offset: 3px; }
 .contact-card a:hover { text-decoration-color: currentColor; }
-.contact-cards .btn-row { margin-top: 12px; }
 .contact-photo { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px; }
 @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } .contact-photo { aspect-ratio: 16 / 10; } }
 
