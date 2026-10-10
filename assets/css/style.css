@@ -158,15 +158,34 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   padding: calc(var(--header-h) + 48px) 0 72px;
   color: var(--on-night);
   background:
-    linear-gradient(90deg, rgba(10, 11, 14, .88) 0%, rgba(10, 11, 14, .62) 55%, rgba(10, 11, 14, .4) 100%),
-    linear-gradient(180deg, rgba(10, 11, 14, .35) 0%, rgba(10, 11, 14, 0) 30%, rgba(10, 11, 14, .65) 100%),
-    url("../img/hero.jpg") center 35% / cover no-repeat,
+    linear-gradient(90deg, rgba(10, 11, 14, .76) 0%, rgba(10, 11, 14, .52) 55%, rgba(10, 11, 14, .32) 100%),
+    linear-gradient(180deg, rgba(10, 11, 14, .3) 0%, rgba(10, 11, 14, 0) 35%, rgba(10, 11, 14, .55) 100%),
+    url("../img/hero.jpg") center 45% / cover no-repeat,
     var(--night);
 }
 .hero-inner { max-width: 1140px; }
-.hero h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.08; letter-spacing: -0.03em; max-width: 16ch; }
-.hero-lead { margin-top: 24px; max-width: 62ch; font-size: clamp(1rem, 1.6vw, 1.14rem); color: var(--on-night-2); }
-.hero .btn-row { margin-top: 32px; }
+.hero h1 {
+  width: fit-content; max-width: 100%;
+  font-size: clamp(2.3rem, 5.4vw, 4.2rem); line-height: 1.28; letter-spacing: -0.012em;
+}
+/* Gamma-style title: white on the left fading to soft gray on the right */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero h1 {
+    background: linear-gradient(90deg, #ffffff 0%, #f4f4f5 38%, #9b9ca1 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+}
+.hero-lead {
+  margin-top: 22px; max-width: 66.5rem; /* wraps into the same 3 lines as the Gamma original */
+  font-size: clamp(1rem, 1.58vw, 1.15rem); font-weight: 500; line-height: 1.62; color: var(--on-night);
+}
+.hero .btn-row { margin-top: 18px; }
+.hero .btn { min-height: 48px; padding: 10px 22px; font-size: 1.04rem; line-height: 1.4; border-radius: 7px; }
+.hero .btn-primary { background: #dcdce4; border-color: #dcdce4; color: #16161a; }
+.hero .btn-primary:hover { background: #fff; border-color: #fff; }
+.hero .btn-ghost { background: rgba(10, 10, 12, .72); border-color: rgba(255, 255, 255, .45); color: #e6e6e8; }
+.hero .btn-ghost:hover { background: rgba(10, 10, 12, .85); border-color: #fff; color: #fff; }
 
 /* ---------- Sections ---------- */
 .section { padding: 96px 0; }
