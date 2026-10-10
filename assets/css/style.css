@@ -241,16 +241,19 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- Research ---------- */
 .areas { margin-top: 40px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+/* number on the left; title and description stacked to its right (as in the Gamma original) */
 .area {
+  display: grid; grid-template-columns: auto 1fr; column-gap: 14px; align-content: start;
   padding: 24px 22px; border-radius: 12px;
   background: rgba(255, 255, 255, .055); border: 1px solid var(--night-line);
   backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
 }
 .area-num {
+  grid-row: span 2;
   display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 8px;
   background: rgba(255, 255, 255, .14); font-weight: 600; font-size: 1.05rem;
 }
-.area h3 { margin: 18px 0 10px; font-size: 1.16rem; }
+.area h3 { margin: 0 0 10px; padding-top: 6px; font-size: 1.16rem; } /* first line centred on the number */
 .area p { color: var(--on-night-2); font-size: .95rem; }
 @media (max-width: 960px) { .areas { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .areas { grid-template-columns: 1fr; } }
