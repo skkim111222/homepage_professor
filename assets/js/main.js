@@ -69,9 +69,10 @@
     el.textContent = items(el.getAttribute('data-count-registered'))
       .filter(function (li) { return li.classList.contains('registered'); }).length;
   });
+  // year range from the "(2022)" at the end of each entry
   document.querySelectorAll('[data-years]').forEach(function (el) {
     var ys = items(el.getAttribute('data-years')).map(function (li) {
-      var y = li.querySelector('.year'); return y ? parseInt(y.textContent, 10) : NaN;
+      var m = li.textContent.match(/\((\d{4})\)\s*$/); return m ? parseInt(m[1], 10) : NaN;
     }).filter(function (y) { return !isNaN(y); });
     if (ys.length) el.textContent = Math.min.apply(null, ys) + ' – ' + Math.max.apply(null, ys);
   });
